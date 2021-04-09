@@ -18,7 +18,9 @@
     <meta property="og:description" content="Vente en ligne de caméra vintage." />
     <meta property="og:site_name" content="Oricam by Orinoco" />
     
-    <script src="https://kit.fontawesome.com/0ac4289e49.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0ac4289e49.js" crossorigin="anonymous" defer></script>
+    
+    <script src="index.js" defer></script>
     
 </head>
 <body>
@@ -27,13 +29,13 @@
             <img class="header__img navbar-brand" src="images/orinoco.png" width="150" height="100" alt="logo Orinoco" />
         </h1>
         <div class="header__panier nav-item">
-            <i class="fas fa-shopping-basket"></i>
+            <i class="fas fa-shopping-basket" id="icon-nav"></i>
         </div>
     </header>
     
     <section class="articles">
         
-        <template id="templateObject">
+        <template id="template">
             <article class="object" id="object">
                 <img src="" alt="" class="object__img" id="object-img" />
                 <div class="object__body" id="object-body">
@@ -46,7 +48,7 @@
     </section>
     
     <footer class="footer">
-        <h2 class="footer__title">Oricam by Orinoco</h2>
+        <h2 class="footer__title h5 font-italic text-center">Oricam by Orinoco</h2>
         <ul class="footer__ul">
             <li class="footer__ul__li">
                 <a class="footer__ul__li__link" href="#">Nous contacter</a>
@@ -59,9 +61,7 @@
             </li>
         </ul>
     </footer>
-    <!-- Optional JavaScript -->
    
-    <script src="index.js" defer></script>
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 

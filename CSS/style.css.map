@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"style.css"}
+{"version":3,"sourceRoot":"","sources":["../SASS/Base/_setting.scss","../SASS/Layout/_header.scss"],"names":[],"mappings":"AAAA,KACI,8BCDJ,UACI","file":"style.css"}
