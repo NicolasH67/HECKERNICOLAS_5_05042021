@@ -1,3 +1,9 @@
 body {
     background: $color-bg!important;
 }
+.footer {
+    background: darken($color-bg, $amount: 20%);
+    margin-bottom: -300%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
