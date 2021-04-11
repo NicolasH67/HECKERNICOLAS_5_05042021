@@ -18,8 +18,6 @@
     <meta property="og:description" content="Vente en ligne de caméra vintage." />
     <meta property="og:site_name" content="Oricam by Orinoco" />
     
-    <script src="https://kit.fontawesome.com/0ac4289e49.js" crossorigin="anonymous" defer></script>
-    
     <script src="index.js" defer></script>
     
 </head>
@@ -29,7 +27,7 @@
             <img class="header__img navbar-brand" src="images/orinoco.png" width="150" height="100" alt="logo Orinoco" />
         </h1>
         <div class="header__panier nav-item">
-            <i class="fas fa-shopping-basket" id="icon-nav"></i>
+        <i class="bi bi-bag-check" id="icon-nav"></i>
         </div>
     </header>
     
@@ -39,12 +37,12 @@
     </section>
 
     <template id="template">
-        <article class="object" id="object">
+        <article class="object card mb-4 ml-3 mr-3" id="object">
             <a href="" id="object-link">
-                <img src="" alt="" class="object__img" id="object-img" />
-                <div class="object__body" id="object-body">
-                    <h2 class="object__body__title" id="object-title"></h2>
-                    <p class="object__body__price" id="object-price"></p>
+                <img src="" alt="" class="object__img card-img-top" id="object-img" />
+                <div class="object__body card-body" id="object-body">
+                    <h2 class="object__body__title h5 mt-n3" id="object-title"></h2>
+                    <p class="object__body__price mb-n3" id="object-price"></p>
                 </div>
             </a>
         </article>
