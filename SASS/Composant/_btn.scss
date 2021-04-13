@@ -1,0 +1,9 @@
+.object__btn {
+    width: 100%;
+    display: flex;
+    &__back, 
+    &__add {
+        width: 50%;
+        height: 50px;
+    }
+}

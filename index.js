@@ -38,5 +38,5 @@ function displayPages(product) {
     // display in page 
     
     const articles = document.getElementById('articles'); 
-    var newObject = articles.appendChild(cloneElt)
+    let newObject = articles.appendChild(cloneElt)
 }

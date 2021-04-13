@@ -1,4 +1,5 @@
 const productId = window.location.search.substr(1);
+const btnBack = document.getElementById('back');
 
 main(); 
 
@@ -9,11 +10,15 @@ async function main() {
     displayPages(product)
 }
 
+btnBack.addEventListener('click', (e) =>  {
+    window.location.href="./index.html"; 
+    e.preventDefault()
+})
 
 async function getProducts() {
 
     // get Api
-    return fetch('http://localhost:3000/api/cameras/${productId}')
+    return fetch(`http://localhost:3000/api/cameras/${productId}`)
         .then((httpBodyResponse) => httpBodyResponse.json())
         .catch((error) => {
             alert(
@@ -27,10 +32,13 @@ function displayPages(product) {
     const img = document.getElementById('img'); 
     const description = document.getElementById('sup'); 
     const price = document.getElementById('price'); 
+    const choice1 = document.getElementById('choice-1');
+    const choice2 = document.getElementById('choice-2');
 
     name.textContent = product.name; 
-    img.textContent = product.imageUrl; 
-    description.textContent = product.description; 
-    price.textContent = product.price; 
+    img.src = product.imageUrl; 
+    img.alt = 'image du '+product.name; 
+    description.innerHTML = product.description;  
+    price.textContent = `${product.price / 100}.00 €`; 
 
-}
+}; 

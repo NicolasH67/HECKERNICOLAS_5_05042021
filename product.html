@@ -35,28 +35,34 @@
 
     <section class="object" id="object">
 
-        <h2 class="object__name" id="name"></h2>
-        <img src="" alt="" class="object__img" id="img" />
+        <h2 class="object__name h1 font-italic mb-3" id="name"></h2>
+        <img src="" alt="" class="object__img img-fluid mb-3" id="img" />
+        <h3 class="h4 font-italic">Description : </h3>
         <p class="object__description" id="sup"></p>
         <p class="object__price" id="price"></p>
-        
-        <button class="object__add">
-            Ajouté au panier
-        </button>
-        
+        <div class="object__btn">
+            <button class="object__btn__back btn btn-primary" id="back">
+                <i class="fas fa-arrow-left"> back</i>
+            </button>
+            
+            <button class="object__btn__add btn btn-primary text-right" id="add">
+                Ajouté au panier
+            </button>
+        </div>
+            
     </section>
     
     <footer class="footer">
         <h2 class="footer__title h5 font-italic text-center">Oricam by Orinoco</h2>
-        <ul class="footer__ul">
+        <ul class="footer__ul d-md-flex justify-content-between">
             <li class="footer__ul__li">
-                <a class="footer__ul__li__link" href="#">Nous contacter</a>
+                <a class="footer__ul__li__link mr-5" href="#">Nous contacter</a>
             </li>
             <li class="footer__ul__li">
-                <a class="footer__ul__li__link" href="#">Devenir partenaire</a>
+                <a class="footer__ul__li__link mr-5" href="#">Devenir partenaire</a>
             </li>
             <li class="footer__ul__li">
-                <a class="footer__ul__li__link" href="#">A propos</a>
+                <a class="footer__ul__li__link mr-5" href="#">A propos</a>
             </li>
         </ul>
     </footer>
