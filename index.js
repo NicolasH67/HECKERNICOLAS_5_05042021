@@ -33,7 +33,7 @@ function displayPages(product) {
     cloneElt.getElementById('object-img').alt = 'image du '+product.name;
     cloneElt.getElementById('object-title').textContent = product.name;
     cloneElt.getElementById('object-price').textContent = `${product.price / 100}.00 €`;
-    cloneElt.getElementById('object-link').href = `/products.html?id=${product._id}`;
+    cloneElt.getElementById('object-link').href = `./product.html?${product._id}`;
     
     // display in page 
     
