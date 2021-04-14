@@ -1,13 +1,16 @@
 const productId = window.location.search.substr(1);
-const btnBack = document.getElementById('back');
+const btnBack = document.getElementById('btnBack');
+const btnAdd = document.getElementById('btnAdd');
+const select = document.getElementById('select');
+const quantity = document.getElementById('quantity');
 
 main(); 
 
 async function main() {
     const product = await getProducts();
 
-    console.log(productId)
-    displayPages(product)
+    console.log(productId);
+    displayPages(product);
 }
 
 btnBack.addEventListener('click', (e) =>  {
@@ -32,8 +35,6 @@ function displayPages(product) {
     const img = document.getElementById('img'); 
     const description = document.getElementById('sup'); 
     const price = document.getElementById('price'); 
-    const choice1 = document.getElementById('choice-1');
-    const choice2 = document.getElementById('choice-2');
 
     name.textContent = product.name; 
     img.src = product.imageUrl; 
@@ -41,4 +42,10 @@ function displayPages(product) {
     description.innerHTML = product.description;  
     price.textContent = `${product.price / 100}.00 €`; 
 
-}; 
+    product.lenses.forEach(objectif => {
+        let option = document.createElement("option"); 
+        option.value = objectif; 
+        option.textContent = objectif;
+        let newOption = select.appendChild(option); 
+    });
+}

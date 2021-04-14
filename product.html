@@ -39,13 +39,32 @@
         <img src="" alt="" class="object__img img-fluid mb-3" id="img" />
         <h3 class="h4 font-italic">Description : </h3>
         <p class="object__description" id="sup"></p>
+        <p>Prix Uniaire : </p>
         <p class="object__price" id="price"></p>
-        <div class="object__btn">
-            <button class="object__btn__back btn btn-primary" id="back">
+        <p class="p">Objectif :</p>
+        <select class="form-select form-select-sm mb-3 w-100" aria-label=".form-select-sm example" id="select">
+
+        </select>
+        <p class="p">Quantité :</p>
+        <select class="form-select form-select-sm mb-3 w-100" aria-label=".form-select-sm example" id="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        
+        <div class="object__btn d-flex">
+            <button class="object__btn__back btn btn-primary w-50" id="btnBack">
                 <i class="fas fa-arrow-left"> back</i>
             </button>
             
-            <button class="object__btn__add btn btn-primary text-right" id="add">
+            <button class="object__btn__add btn btn-success text-right w-50" id="btnAdd">
                 Ajouté au panier
             </button>
         </div>
