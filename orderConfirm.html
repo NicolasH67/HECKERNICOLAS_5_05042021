@@ -20,7 +20,7 @@
     
     <script src="https://kit.fontawesome.com/0ac4289e49.js" crossorigin="anonymous" defer></script>
     
-    <script src="product.js" defer></script>
+    <script src="index.js" defer></script>
     <script src="basket.js" defer></script>
     
 </head>
@@ -33,43 +33,56 @@
             <i class="fas fa-shopping-basket" id="icon-nav"></i>
         </div>
     </header>
+    
+    <section>
 
-    <section class="object" id="object">
+        <h2 class="h3 mb-4">Confirmation de commande</h2>
 
-        <h2 class="object__name h1 font-italic mb-3" id="name"></h2>
-        <img src="" alt="" class="object__img img-fluid mb-3" id="img" />
-        <h3 class="h4 font-italic">Description : </h3>
-        <p class="object__description" id="sup"></p>
-        <p>Prix Uniaire : </p>
-        <p class="object__price" id="price"></p>
-        <p class="p">Objectif :</p>
-        <select class="form-select form-select-sm mb-3 w-100" aria-label=".form-select-sm example" id="select">
-
-        </select>
-        <p class="p">Quantité :</p>
-        <select class="form-select form-select-sm mb-3 w-100" aria-label=".form-select-sm example" id="quantity">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
-        
-        <div class="object__btn d-flex">
-            <button class="object__btn__back btn btn-primary w-50" id="btnBack">
-                <i class="fas fa-arrow-left"> back</i>
-            </button>
+        <form>
+            <div class="form-group mb-4">
+                <h2 class="h5 ml-2">Comment vous appelez-vous ?</h2>
+              
+                <label for="Nom">Nom</label>
+                <input type="text" class="form-control" id="nom" placeholder="Nom" required autofocus pattern="[A-Za-z]+"> 
             
-            <button class="object__btn__add btn btn-success text-center w-50" id="btnAdd">
-                Ajouté au panier
-            </button>
-        </div>
+                <label for="Prenom">Prénom</label>
+                <input type="text" class="form-control" id="Prenom" placeholder="Prénom" required pattern="[A-Za-z]+">
             
+            </div>
+            
+            <div class="form-group mb-3">
+                
+                <h2 class="h5 ml-2">Pour vous contacter</h2>
+
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="mail@mail.mail" required>
+              
+                <label for="telephon">Téléphone</label>
+                <input type="tel" class="form-control" id="telephon" placeholder="06 00 00 00 00" required>
+
+            </div>
+            
+            <div class="form-group mb-3">
+
+                <h2 class="h5 ml-2">Votre Adresse</h2>
+            
+                <label for="adresse">Numéro</label>
+                <input type="number" class="form-control" id="adresse" placeholder="54" required>
+                
+                <label for="adresse">Adresse</label>
+                <input type="text" class="form-control" id="adresse" placeholder="rue de paris" required>
+                
+                <label for="codePostal">Code Postal</label>
+                <input type="number" class="form-control" id="codePostal" placeholder="75000" required>
+                
+                <label for="ville">Code Postal</label>
+                <input type="text" class="form-control" id="ville" placeholder="Paris" required> 
+
+            </div>
+            
+            <button type="submit" class="btn btn-primary w-100">Commander</button>
+
+          </form>
     </section>
     
     <footer class="footer">
