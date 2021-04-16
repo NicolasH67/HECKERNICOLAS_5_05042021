@@ -37,6 +37,11 @@
         <div class="basket" id="div-basket">
 
         </div>
+
+        <div>
+            <h2>Prix total : <span id="totalPrice"></span></h2>
+        </div>
+
         <button class="object__btn__back btn btn-success w-100" id="btnCommande">
             Commander
         </button>
@@ -59,6 +64,14 @@
 
         <h2 class="object__name h1 font-italic mb-3" id="name"></h2>
         
+        <select class="form-select form-select-sm mb-3 w-100" aria-label=".form-select-sm example" id="select-basket">
+            <option value="selected" id="selected"></option>
+        </select>
+
+        <p id="quantity"></p>
+
+        <p id="price"></p>
+
     </template>
 
     <footer class="footer">

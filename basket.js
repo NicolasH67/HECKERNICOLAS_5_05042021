@@ -49,38 +49,55 @@ else {
         const productQuantity = product[2];
         
         main()
-
+        
         async function main() {
             const completeProduct = await getProduct()
             console.log(completeProduct)
             displayPages(completeProduct)
-        }
+            
+            completeProduct.lenses.forEach(objectif => {
+                let option = document.createElement("option"); 
+                option.value = objectif; 
+                option.textContent = objectif;
+    
+                const selectBasket = document.getElementById(`select-basket${completeProduct._id}`)
 
+                console.log(selectBasket)
+
+                let newOption = selectBasket.appendChild(option); 
+        }); 
+        }
+        
         async function getProduct() {
             return fetch(`http://localhost:3000/api/cameras/${productId}`)
             .then((httpBodyResponse) => httpBodyResponse.json())
             .catch((error) => {
                 alert(
                     "la connexion au serveur n'a pas pu être effectué"
-                )
-            }); 
+                    )
+                }); 
+            }
+            
+            
+            function displayPages(product) {
+                const templateElt = document.getElementById('template-basket')
+                // clone template 
+                const cloneElt = document.importNode(templateElt.content, true); 
+                
+                // displayPage
+                cloneElt.getElementById('name').textContent = product.name;
+                cloneElt.getElementById('select-basket').id = `select-basket${product._id}`;
+                cloneElt.getElementById('selected').textContent = productObjectif;
+                cloneElt.getElementById('quantity').textContent = productQuantity;
+                cloneElt.getElementById('price').textContent = `${product.price * productQuantity / 100}.00 €`;
+                
+                
+                // display in page 
+                
+                const basket = document.getElementById('div-basket'); 
+                let newObject = basket.appendChild(cloneElt)
+                
+            }
         }
-
-        
-        function displayPages(product) {
-            const templateElt = document.getElementById('template-basket')
-            // clone template 
-            const cloneElt = document.importNode(templateElt.content, true); 
-    
-            // displayPage
-            cloneElt.getElementById('name').textContent = product.name;
-    
-            // display in page 
-    
-            const basket = document.getElementById('div-basket'); 
-            let newObject = basket.appendChild(cloneElt)
-
-       }
-    }
 
 }
