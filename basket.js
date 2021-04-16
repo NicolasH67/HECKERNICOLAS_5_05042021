@@ -28,6 +28,8 @@ btnClear.addEventListener('click', (e) =>  {
 btnCommande.addEventListener('click', (e) =>  {
     window.location.href="./orderConfirm.html"; 
     e.preventDefault()
+    localStorage.clear()
+    
 })
 
 //----------------display basket ---------------
@@ -48,6 +50,8 @@ else {
         const productObjectif = product[1];
         const productQuantity = product[2];
         
+
+
         main()
         
         async function main() {
@@ -61,11 +65,9 @@ else {
                 option.textContent = objectif;
     
                 const selectBasket = document.getElementById(`select-basket${completeProduct._id}`)
-
-                console.log(selectBasket)
-
                 let newOption = selectBasket.appendChild(option); 
-        }); 
+            }); 
+
         }
         
         async function getProduct() {
@@ -76,28 +78,26 @@ else {
                     "la connexion au serveur n'a pas pu être effectué"
                     )
                 }); 
-            }
-            
-            
-            function displayPages(product) {
-                const templateElt = document.getElementById('template-basket')
-                // clone template 
-                const cloneElt = document.importNode(templateElt.content, true); 
-                
-                // displayPage
-                cloneElt.getElementById('name').textContent = product.name;
-                cloneElt.getElementById('select-basket').id = `select-basket${product._id}`;
-                cloneElt.getElementById('selected').textContent = productObjectif;
-                cloneElt.getElementById('quantity').textContent = productQuantity;
-                cloneElt.getElementById('price').textContent = `${product.price * productQuantity / 100}.00 €`;
-                
-                
-                // display in page 
-                
-                const basket = document.getElementById('div-basket'); 
-                let newObject = basket.appendChild(cloneElt)
-                
-            }
         }
+            
+            
+        function displayPages(product) {
+            // clone template 
+            const templateElt = document.getElementById('template-basket')
+            const cloneElt = document.importNode(templateElt.content, true); 
+            
+            // displayPage
+            cloneElt.getElementById('name').textContent = product.name;
+            cloneElt.getElementById('select-basket').id = `select-basket${product._id}`;
+            cloneElt.getElementById('quantity-basket').id = `quantity-basket${product._id}`;
+            cloneElt.getElementById('price').textContent = `${product.price * productQuantity / 100}.00 €`;
+            
+                
+            // display in page 
+                
+            const basket = document.getElementById('div-basket'); 
+            let newObject = basket.appendChild(cloneElt)
 
+        }
+    }    
 }

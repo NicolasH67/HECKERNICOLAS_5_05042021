@@ -56,7 +56,7 @@ btnAdd.addEventListener('click', function e() {
     const id = window.location.search.substr(1);
     const objectif = select.value; 
     const selectQuantity = quantity.value; 
-    let optionProduit= [id, objectif, selectQuantity]
+    let optionProduit = [id, objectif, selectQuantity]
 
     //----- localStorage add element ------------
     let produitLocalStorage = JSON.parse(localStorage.getItem("produit")); 
