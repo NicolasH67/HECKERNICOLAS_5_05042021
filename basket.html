@@ -42,12 +42,13 @@
             <h2>Prix total : <span id="totalPrice"></span></h2>
         </div>
 
+        
         <button class="object__btn__back btn btn-success w-100" id="btnCommande">
             Commander
         </button>
         
         <div class="d-flex">
-
+            
             <button class="object__btn__back btn btn-primary w-50" id="btnHome">
                 Page d'accueil
             </button>
@@ -55,18 +56,18 @@
             <button class="object__btn__add btn btn-danger text-center w-50" id="btnClear">
                 Vider le panier 
             </button>
-
+            
         </div>
-
+        
     </section>
-
+    
     <template id="template-basket">
-        <article>
-
+        <article id="article">
+            
             <h2 class="object__name h1 font-italic mb-3" id="name"></h2>
             
             <select class="form-select form-select-sm mb-3 w-100" aria-label=".form-select-sm example" id="select-basket">
-    
+                
             </select>
             
             <p class="p">Quantité :</p>
@@ -82,14 +83,18 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-    
-    
-            <p id="price"></p>
+            
+            
+            <p id="price" class="prix"></p>
 
+            <button id="delete">
+                <i class="fas fa-trash-alt">supprimer cette article du panier</i>
+            </button>
+            
         </article>    
-
+        
     </template>
-
+    
     <footer class="footer">
         <h2 class="footer__title h5 font-italic text-center">Oricam by Orinoco</h2>
         <ul class="footer__ul d-md-flex justify-content-between">
