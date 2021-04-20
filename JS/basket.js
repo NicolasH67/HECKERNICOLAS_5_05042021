@@ -22,7 +22,7 @@ btnHome.addEventListener('click', (e) =>  {
 btnClear.addEventListener('click', (e) =>  {
     localStorage.clear()
     e.preventDefault()
-    sectionBasket.innerHTML = '<div class="empty-basket"><p class="h2 text-danger font-italic">Votre Panier est vide </p></div>'
+    window.location.href = "./basket.html"
 
 })
 
@@ -43,9 +43,7 @@ if (produitLocalStorage === null) {
 else {
     for (let i = 0; i < produitLocalStorage.length; i++) {
         const product = produitLocalStorage[i];
-        console.log(product);
         const productId = product[0];
-        console.log(productId);
         const productObjectif = product[1];
         const productQuantity = product[2];
         
@@ -53,33 +51,24 @@ else {
         
         async function main() {
             const completeProduct = await getProduct()
-            console.log(completeProduct)
             displayPages(completeProduct)
             
             const quantityBasket = document.getElementById(`quantity-basket${completeProduct._id}`); 
             quantityBasket.value = productQuantity;
             
+            // ----------------- function Prix total -----------------------------
+
             const sectionPrice = document.getElementById(`price${completeProduct._id}`); 
-            
             const sectionPriceQuantity = document.getElementById(`quantity-basket${completeProduct._id}`)
-            
             const productPrice = completeProduct.price
-        
             const finalPrice = sectionPriceQuantity.value * productPrice
-            
             sectionPrice.textContent = `Prix : ${finalPrice / 100},00€`
-            
-            console.log(`Prix : ${finalPrice / 100},00€`)
-            
             price.push(finalPrice)
-
-            console.log(price)
-
             const reducer = (accumulator, currentValue) => accumulator + currentValue; 
-
             const totalPrice = price.reduce(reducer); 
-
             document.getElementById('totalPrice').textContent = `${totalPrice / 100},00€`
+
+            // ------------------- end function -------------------------------------
             
             completeProduct.lenses.forEach(objectif => {
                 let option = document.createElement("option"); 
@@ -88,7 +77,6 @@ else {
                 const selectBasket = document.getElementById(`select-basket${completeProduct._id}`)
                 
                 let newOption = selectBasket.appendChild(option);
-                console.log(productObjectif);
                 
                 // select value 
                 selectBasket.value = productObjectif; 
@@ -118,7 +106,7 @@ else {
             cloneElt.getElementById('select-basket').id = `select-basket${product._id}`;
             cloneElt.getElementById('quantity-basket').id = `quantity-basket${product._id}`;
             cloneElt.getElementById('price').id = `price${product._id}`
-            cloneElt.getElementById('delete').id = `delete?${product._id}`
+            cloneElt.getElementById('btnDelete').value = product._id
                 
             // display in page 
                 
@@ -128,3 +116,4 @@ else {
         }
     }    
 }
+
