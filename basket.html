@@ -32,6 +32,17 @@
             <i class="fas fa-shopping-basket" id="icon-nav"></i>
         </div>
     </header>
+    <div class="d-flex">
+        
+        <button class="object__btn__back btn btn-primary w-50" id="btnHome">
+            Page d'accueil
+        </button>
+        
+        <button class="object__btn__add btn btn-danger text-center w-50" id="btnClear">
+            Vider le panier 
+        </button>
+        
+    </div>
     <section>
         <h2 class="h1">Votre panier</h2>
         <div class="basket" id="div-basket">
@@ -43,23 +54,59 @@
         </div>
 
         
-        <button class="object__btn__back btn btn-success w-100" id="btnCommande">
-            Commander
-        </button>
         
-        <div class="d-flex">
-            
-            <button class="object__btn__back btn btn-primary w-50" id="btnHome">
-                Page d'accueil
-            </button>
-            
-            <button class="object__btn__add btn btn-danger text-center w-50" id="btnClear">
-                Vider le panier 
-            </button>
-            
-        </div>
         
     </section>
+    
+    <section>
+        <h2>Vos information personnelles</h2>
+        <form>
+            <div class="form-group mb-4">
+                <h2 class="h5 ml-2">Comment vous appelez-vous ?</h2>
+                
+                <label for="Nom">Nom</label>
+                <input type="text" class="form-control" id="nom" placeholder="Nom" required autofocus pattern="[A-Za-z]+"> 
+                
+                <label for="Prenom">Prénom</label>
+                <input type="text" class="form-control" id="Prenom" placeholder="Prénom" required pattern="[A-Za-z]+">
+                
+            </div>
+            
+            <div class="form-group mb-3">
+                
+                <h2 class="h5 ml-2">Pour vous contacter</h2>
+                
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="mail@mail.mail" required>
+                
+                <label for="telephon">Téléphone</label>
+                <input type="tel" class="form-control" id="telephon" placeholder="06 00 00 00 00" required>
+                
+            </div>
+            
+            <div class="form-group mb-3">
+                
+                <h2 class="h5 ml-2">Votre Adresse</h2>
+                
+                <label for="adresse">Numéro</label>
+                <input type="number" class="form-control" id="adresse" placeholder="54" required>
+                
+                <label for="adresse">Adresse</label>
+                <input type="text" class="form-control" id="adresse" placeholder="rue de paris" required>
+                
+                <label for="codePostal">Code Postal</label>
+                <input type="number" class="form-control" id="codePostal" placeholder="75000" required>
+                
+                <label for="ville">Code Postal</label>
+                <input type="text" class="form-control" id="ville" placeholder="Paris" required> 
+                
+            </div>
+            
+            <button type="submit" class="btn btn-primary w-100">Commander</button>
+            
+        </form>
+        
+    </section>    
     
     <template id="template-basket">
         <article id="article">
@@ -87,7 +134,7 @@
             
             <p id="price" class="prix"></p>
 
-            <button class="delete" id="btnDelete" value="">
+            <button id="delete">
                 <i class="fas fa-trash-alt">supprimer cette article du panier</i>
             </button>
             

@@ -35,6 +35,7 @@ btnCommande.addEventListener('click', (e) =>  {
 //----------------display basket ---------------
 const sectionBasket = document.getElementById('div-basket'); 
 let produitLocalStorage = JSON.parse(localStorage.getItem("produit")); 
+console.log(produitLocalStorage)
 
 
 if (produitLocalStorage === null) {
@@ -57,7 +58,7 @@ else {
             quantityBasket.value = productQuantity;
             
             // ----------------- function Prix total -----------------------------
-
+            
             const sectionPrice = document.getElementById(`price${completeProduct._id}`); 
             const sectionPriceQuantity = document.getElementById(`quantity-basket${completeProduct._id}`)
             const productPrice = completeProduct.price
@@ -67,7 +68,7 @@ else {
             const reducer = (accumulator, currentValue) => accumulator + currentValue; 
             const totalPrice = price.reduce(reducer); 
             document.getElementById('totalPrice').textContent = `${totalPrice / 100},00€`
-
+            
             // ------------------- end function -------------------------------------
             
             completeProduct.lenses.forEach(objectif => {
@@ -92,28 +93,36 @@ else {
                     "la connexion au serveur n'a pas pu être effectué"
                     )
                 }); 
-        }
+            }
             
             
-        function displayPages(product) {
-            // clone template 
-            const templateElt = document.getElementById('template-basket')
-            const cloneElt = document.importNode(templateElt.content, true); 
+            function displayPages(product) {
+                // clone template 
+                const templateElt = document.getElementById('template-basket')
+                const cloneElt = document.importNode(templateElt.content, true); 
                 
-            // displayPage
-            cloneElt.getElementById('article').id = `article${product._id}`;
-            cloneElt.getElementById('name').textContent = product.name;
-            cloneElt.getElementById('select-basket').id = `select-basket${product._id}`;
-            cloneElt.getElementById('quantity-basket').id = `quantity-basket${product._id}`;
-            cloneElt.getElementById('price').id = `price${product._id}`
-            cloneElt.getElementById('btnDelete').value = product._id
+                // displayPage
+                cloneElt.getElementById('article').id = `article${product._id}`;
+                cloneElt.getElementById('name').textContent = product.name;
+                cloneElt.getElementById('select-basket').id = `select-basket${product._id}`;
+                cloneElt.getElementById('quantity-basket').id = `quantity-basket${product._id}`;
+                cloneElt.getElementById('price').id = `price${product._id}`
+                cloneElt.getElementById('delete').id = `delete${product._id}`
                 
-            // display in page 
+                // display in page 
                 
-            const basket = document.getElementById('div-basket'); 
-            let newObject = basket.appendChild(cloneElt)
+                const basket = document.getElementById('div-basket'); 
+                let newObject = basket.appendChild(cloneElt)
 
-        }
+                const btnDelete = document.getElementById(`delete${product._id}`); 
+                btnDelete.addEventListener('click', (e) => {
+                    e.preventDefault()
+                    const product = produitLocalStorage[i];
+                    console.log(product)
+                    localStorage.removeItem("i")
+                })
+                
+            }
     }    
 }
 
