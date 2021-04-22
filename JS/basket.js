@@ -113,6 +113,14 @@ else {
                     e.preventDefault()
                     const product = produitLocalStorage[i];
                     console.log(product); 
+                    deleteItems(i)
+
+                    function deleteItems(i) {
+                        console.log(i)
+                        localStorage.removeItem(i)
+                        console.log(produitLocalStorage)
+                        console.log(localStorage.getItem(product._id))
+                    }
                 })
                 
             }
