@@ -26,12 +26,6 @@ btnClear.addEventListener('click', (e) =>  {
 
 })
 
-btnCommande.addEventListener('click', (e) =>  {
-    e.preventDefault()
-    window.location.href="./orderConfirm.html"; 
-
-})
-
 //----------------display basket ---------------
 const sectionBasket = document.getElementById('div-basket'); 
 let produitLocalStorage = JSON.parse(localStorage.getItem("produit")); 
@@ -119,7 +113,8 @@ else {
                     e.preventDefault()
                     const product = produitLocalStorage[i];
                     console.log(product)
-                    localStorage.removeItem("i")
+                    console.log(product[0])
+                    localStorage.removeItem("produit[i]")
                 })
                 
             }
