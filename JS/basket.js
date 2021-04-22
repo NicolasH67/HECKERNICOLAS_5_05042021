@@ -112,9 +112,7 @@ else {
                 btnDelete.addEventListener('click', (e) => {
                     e.preventDefault()
                     const product = produitLocalStorage[i];
-                    console.log(product)
-                    console.log(product[0])
-                    localStorage.removeItem("produit[i]")
+                    console.log(product); 
                 })
                 
             }
