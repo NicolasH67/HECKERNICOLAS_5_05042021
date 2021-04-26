@@ -56,10 +56,12 @@ btnAdd.addEventListener('click', function e() {
     const id = window.location.search.substr(1);
     const objectif = select.value; 
     const selectQuantity = quantity.value; 
-    let optionProduit = [id, objectif, selectQuantity]
+    let selectOption = [objectif, selectQuantity]
+    console.log(selectOption)
 
     //----- localStorage add element ------------
 
-    localStorage.setItem(`${id}`, optionProduit)
-    
+    let JSONarray = JSON.stringify(selectOption)
+    localStorage.setItem(`${id}`, JSONarray)
+    window.alert('Produit ajouté au panier')
 })

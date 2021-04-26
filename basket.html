@@ -7,7 +7,8 @@
     <meta name="description" content="Application de vente de caméra by Orinoco">
     
     <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
     
     <title>Oricam - by Orinoco</title>
     
@@ -80,7 +81,7 @@
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="mail@mail.mail" required>
                 
                 <label for="telephon">Téléphone</label>
-                <input type="tel" class="form-control" id="telephon" placeholder="06 00 00 00 00" required>
+                <input type="tel" class="form-control" id="telephon" placeholder="06 00 00 00 00" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-" required>
                 
             </div>
             
@@ -97,7 +98,7 @@
                 <label for="codePostal">Code Postal</label>
                 <input type="number" class="form-control" id="codePostal" placeholder="75000" required>
                 
-                <label for="ville">Code Postal</label>
+                <label for="ville">Ville</label>
                 <input type="text" class="form-control" id="ville" placeholder="Paris" required> 
                 
             </div>
@@ -109,9 +110,9 @@
     </section>    
     
     <template id="template-basket">
-        <article id="article">
+        <article id="article border-style" class="m-3 border border-primary rounded border-2">
             
-            <h2 class="object__name h1 font-italic mb-3" id="name"></h2>
+            <h2 class="object__name h1 fst-italic mb-3" id="name"></h2>
             
             <select class="form-select form-select-sm mb-3 w-100" aria-label=".form-select-sm example" id="select-basket">
                 
@@ -134,9 +135,16 @@
             
             <p id="price" class="prix"></p>
 
-            <button id="delete">
-                <i class="fas fa-trash-alt">supprimer cette article du panier</i>
-            </button>
+            <div class="d-flex pt-2 pb-2">
+                <button id="modif" class="btn btn-warning w-50">
+                    Modifier
+                </button>
+                
+                <button id="delete" class="btn btn-danger w-50 d-flex">
+                    <i class="fas fa-trash-alt pt-3"></i>
+                    supprimer du panier
+                </button>
+            </div>
             
         </article>    
         
@@ -158,13 +166,9 @@
     </footer>
    
     
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Bootstrap Bundle with Popper -->
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
 </body>
 </html>
