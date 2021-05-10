@@ -132,3 +132,26 @@ else {
         }
     }
 }
+
+// -------------------  btnCommande function ------------------------------
+
+
+btnCommande.addEventListener('click', (e) =>{
+    const nom = document.getElementById('nom').value
+    const prenom = document.getElementById('prenom').value
+    const email = document.getElementById('email').value
+    const telephon = document.getElementById('telephon').value
+    const adresse = document.getElementById('adresse').value
+    const codePostal = document.getElementById('codePostal').value
+    const ville = document.getElementById('ville').value
+    
+    localStorage.removeItem("contact")
+    let contact = [nom, prenom, email, telephon, adresse, codePostal, ville]
+    let JSONcontact = JSON.stringify(contact)
+    localStorage.setItem("contact", JSONcontact)
+    }
+)
+
+function orderConfirm() {
+    window.location.href = "./order.html"
+}

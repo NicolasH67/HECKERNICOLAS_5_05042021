@@ -33,7 +33,7 @@
             <i class="fas fa-shopping-basket" id="icon-nav"></i>
         </div>
     </header>
-    <div class="d-flex">
+    <div class="d-flex mb-3">
         
         <button class="object__btn__back btn btn-primary w-50" id="btnHome">
             Continuer vos achats 
@@ -61,15 +61,15 @@
     
     <section>
         <h2>Vos information personnelles</h2>
-        <form>
+        <form id="form" action="order.html">
             <div class="form-group mb-4">
                 <h2 class="h5 ml-2">Comment vous appelez-vous ?</h2>
                 
                 <label for="Nom">Nom</label>
-                <input type="text" class="form-control" id="nom" placeholder="Nom" required autofocus pattern="[A-Za-z]+"> 
+                <input type="text" class="form-control" id="nom" placeholder="Nom" required autofocus pattern="[A-z\s\-]+" title="Les caractères autorisés sont les lettres minuscules et majuscules, l'espace et le tiret"> 
                 
-                <label for="Prenom">Prénom</label>
-                <input type="text" class="form-control" id="Prenom" placeholder="Prénom" required pattern="[A-Za-z]+">
+                <label for="prenom">Prénom</label>
+                <input type="text" class="form-control" id="prenom" placeholder="Prénom" required pattern="[A-z\-]+" title="Les caractères autorisés sont les lettres minuscules et majuscules, l'espace et le tiret">
                 
             </div>
             
@@ -81,29 +81,26 @@
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="mail@mail.mail" required>
                 
                 <label for="telephon">Téléphone</label>
-                <input type="tel" class="form-control" id="telephon" placeholder="06 00 00 00 00" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-" required>
+                <input type="tel" class="form-control" id="telephon" placeholder="06 00 00 00 00" pattern="[0-9]{10}" required title="Votre numéro doit comporter 10 chiffres">
                 
             </div>
             
             <div class="form-group mb-3">
                 
                 <h2 class="h5 ml-2">Votre Adresse</h2>
-                
-                <label for="adresse">Numéro</label>
-                <input type="number" class="form-control" id="adresse" placeholder="54" required>
-                
+                                
                 <label for="adresse">Adresse</label>
-                <input type="text" class="form-control" id="adresse" placeholder="rue de paris" required>
+                <input type="text" class="form-control" id="adresse" placeholder="34 rue de paris" required>
                 
                 <label for="codePostal">Code Postal</label>
-                <input type="number" class="form-control" id="codePostal" placeholder="75000" required>
+                <input type="text" class="form-control" id="codePostal" placeholder="75000" pattern="[0-9]{5}" title="Vozarjkaozj" required>
                 
                 <label for="ville">Ville</label>
-                <input type="text" class="form-control" id="ville" placeholder="Paris" required> 
+                <input type="text" class="form-control" id="ville" placeholder="Paris" pattern="[A-z\s\-]+" required> 
                 
             </div>
             
-            <button type="submit" class="btn btn-primary w-100">Commander</button>
+            <input type="submit" class="btn btn-primary w-100" id="btnCommande" value="Commander">
             
         </form>
         
@@ -140,8 +137,7 @@
                     Modifier
                 </button>
                 
-                <button id="delete" class="btn btn-danger w-50 d-flex">
-                    <i class="fas fa-trash-alt pt-3"></i>
+                <button id="delete" class="btn btn-danger w-50">
                     supprimer du panier
                 </button>
             </div>
@@ -164,7 +160,6 @@
             </li>
         </ul>
     </footer>
-   
     
     <!-- Bootstrap Bundle with Popper -->
 
