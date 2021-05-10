@@ -43,8 +43,6 @@ else {
         const selectQuantity = product[1]
         console.log(selectObjectif, selectQuantity)
         const templateElt = document.getElementById('template-basket');
-
-        
         
         main()
         
@@ -149,9 +147,11 @@ btnCommande.addEventListener('click', (e) =>{
     let contact = [nom, prenom, email, telephon, adresse, codePostal, ville]
     let JSONcontact = JSON.stringify(contact)
     localStorage.setItem("contact", JSONcontact)
-    }
-)
 
-function orderConfirm() {
-    window.location.href = "./order.html"
-}
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    const lstotalPrice = priceArray.reduce(reducer)
+
+    localStorage.removeItem("totalPrice")
+    localStorage.setItem("totalPrice", lstotalPrice)
+    console.log(localStorage.getItem("totalPrice"))
+})
