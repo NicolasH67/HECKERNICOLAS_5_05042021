@@ -37,6 +37,7 @@ function displayContactElt() {
     // function pour supprimer les éléments qui ne sont pas des article 
     localStorage.removeItem("contact")
     localStorage.removeItem("totalPrice")
+    
     for (var i = 0; i < localStorage.length; i++) {
         const productId = localStorage.key(i)
         const product = JSON.parse(localStorage.getItem(productId))
@@ -74,14 +75,22 @@ function displayContactElt() {
             cloneElt.getElementById('name').textContent = product.name;
             cloneElt.getElementById('objectif').textContent = selectObjectif;
             cloneElt.getElementById('quantity').textContent = selectQuantity;
-            cloneElt.getElementById('price').textContent = `${product.price * selectQuantity / 100},00€`;
+            cloneElt.getElementById('price').textContent = `  ${product.price * selectQuantity / 100},00€`;
         
             // display in page 
         
-            const articles = document.getElementById('product'); 
+            const articles = document.getElementById('sectionElt'); 
             let newObject = articles.appendChild(cloneElt)
     
         }
     }
     
 }
+
+const btnReturn = document.getElementById('btnReturn')
+
+btnReturn.addEventListener('click', (e) => {
+    e.preventDefault()
+    localStorage.clear()
+    window.location.href = "./index.html"
+})

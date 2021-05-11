@@ -22,13 +22,13 @@
     <script src="https://kit.fontawesome.com/0ac4289e49.js" crossorigin="anonymous" defer></script>
     
     <script src="JS/basket.js" defer></script>
-    <script src="js/order.js" defer></script>
+    <script src="JS/order.js" defer></script>
     
 </head>
 <body>
     <header class="header navbar">
         <h1>
-            <a href="index.html"><img class="header__img navbar-brand" src="images/orinoco.png" height="100" alt="logo Orinoco" /></a>
+            <img class="header__img navbar-brand" src="images/orinoco.png" height="100" alt="logo Orinoco" />
         </h1>
         <div class="header__panier nav-item">
             <i class="fas fa-shopping-basket" id="icon-nav"></i>
@@ -41,8 +41,11 @@
         </article>
         <article id="product">
             <h2 class="h2">Vos produits : </h2>
+            <div id="sectionElt" class="d-md-flex flex-wrap">
+
+            </div>
             <template id="templateOrder">
-                <div id="element">
+                <div id="element" class="m-2 border border-primary border-2">
                     <h3 id="name"></h2>
                     <p id="objectif"></p>
                     <p id="quantity"></p>
@@ -50,10 +53,17 @@
                 </div>
             </template>
         </article>
+        <h2>Prix Total</h2>
         <h2 id="totalPrice">
 
         </h2>
 
+    </section>
+    <section class="mt-4 mb-3">
+        <h2 class="h3">Revenez au Menu principal en cliquant sur le bouton ci-dessous</h2>
+        <button class="btn btn-primary w-100" id="btnReturn">
+            Menu principal
+        </button>
     </section>
     
 
