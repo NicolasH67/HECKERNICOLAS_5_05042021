@@ -8,7 +8,6 @@ main();
 
 async function main() {
     const product = await getProducts();
-
     console.log(product)
     console.log(productId);
     displayPages(product);

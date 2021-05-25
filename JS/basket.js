@@ -12,7 +12,7 @@ basket.addEventListener('click', (e) =>  {
 const btnHome = document.getElementById('btnHome'); 
 const btnClear = document.getElementById('btnClear'); 
 const btnCommande = document.getElementById('btnCommande'); 
-const priceArray = []
+let priceArray = []
 console.log(priceArray)
 
 btnHome.addEventListener('click', (e) =>  {
@@ -135,13 +135,13 @@ else {
 
 
 btnCommande.addEventListener('click', (e) =>{
-    const nom = document.getElementById('nom').value
-    const prenom = document.getElementById('prenom').value
-    const email = document.getElementById('email').value
-    const telephon = document.getElementById('telephon').value
-    const adresse = document.getElementById('adresse').value
-    const codePostal = document.getElementById('codePostal').value
-    const ville = document.getElementById('ville').value
+    let nom = document.getElementById('nom').value
+    let prenom = document.getElementById('prenom').value
+    let email = document.getElementById('email').value
+    let telephon = document.getElementById('telephon').value
+    let adresse = document.getElementById('adresse').value
+    let codePostal = document.getElementById('codePostal').value
+    let ville = document.getElementById('ville').value
     
     localStorage.removeItem("contact")
     let contact = [nom, prenom, email, telephon, adresse, codePostal, ville]
