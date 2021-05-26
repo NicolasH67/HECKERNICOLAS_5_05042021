@@ -7,3 +7,19 @@ body {
     padding-top: 15px;
     padding-bottom: 15px;
 }
+
+.footer-product {
+    background: darken($color-bg, $amount: 20%);
+    margin-top: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    @media screen and (min-width: 767px) {
+        background: darken($color-bg, $amount: 20%);
+        margin-top: 50px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}
