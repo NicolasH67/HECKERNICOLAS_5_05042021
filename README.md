@@ -11,7 +11,7 @@ You will need to have Node and `npm` installed locally on your machine.
 
 Clone this repo. 
 From within the project folder, run `npm install`. 
-You can then run the server with `node server`. 
+You can then run the server with `node server.js`. 
 
 ## Francais ##
 
@@ -23,4 +23,4 @@ Installés localement Node et 'npm' sur votre machine
 
 Clonez ce dépôt. 
 Depuis le dossier du projet, exécutez `npm install`.
-Exécuter la commande `node server`. 
+Exécuter la commande `node server.js`. 
