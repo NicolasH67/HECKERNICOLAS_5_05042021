@@ -61,15 +61,15 @@
     
     <section>
         <h2>Vos information personnelles</h2>
-        <form id="form" action="order.html">
+        <form id="form">
             <div class="form-group mb-4">
                 <h2 class="h5 ml-2">Comment vous appelez-vous ?</h2>
                 
                 <label for="Nom">Nom</label>
-                <input type="text" class="form-control" id="nom" placeholder="Nom" required autofocus pattern="[A-z\s\-]+" title="Les caractères autorisés sont les lettres minuscules et majuscules, l'espace et le tiret"> 
+                <input type="text" class="form-control" id="nom" placeholder="Nom" autofocus> 
                 
                 <label for="prenom">Prénom</label>
-                <input type="text" class="form-control" id="prenom" placeholder="Prénom" required pattern="[A-z\-]+" title="Les caractères autorisés sont les lettres minuscules et majuscules, l'espace et le tiret">
+                <input type="text" class="form-control" id="prenom" placeholder="Prénom">
                 
             </div>
             
@@ -78,10 +78,10 @@
                 <h2 class="h5 ml-2">Pour vous contacter</h2>
                 
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="mail@mail.mail" required>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="mail@mail.mail">
                 
                 <label for="telephon">Téléphone</label>
-                <input type="tel" class="form-control" id="telephon" placeholder="06 00 00 00 00" pattern="[0-9]{10}" required title="Votre numéro doit comporter 10 chiffres">
+                <input type="tel" class="form-control" id="telephon" placeholder="06 00 00 00 00">
                 
             </div>
             
@@ -90,13 +90,13 @@
                 <h2 class="h5 ml-2">Votre Adresse</h2>
                                 
                 <label for="adresse">Adresse</label>
-                <input type="text" class="form-control" id="adresse" placeholder="34 rue de paris" required>
+                <input type="text" class="form-control" id="adresse" placeholder="34 rue de paris">
                 
                 <label for="codePostal">Code Postal</label>
-                <input type="text" class="form-control" id="codePostal" placeholder="75000" pattern="[0-9]{5}" title="Format 99999" required>
+                <input type="text" class="form-control" id="codePostal" placeholder="75000">
                 
                 <label for="ville">Ville</label>
-                <input type="text" class="form-control" id="ville" placeholder="Paris" pattern="[A-z\s\-]+" required> 
+                <input type="text" class="form-control" id="ville" placeholder="Paris"> 
                 
             </div>
             

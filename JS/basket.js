@@ -135,6 +135,7 @@ else {
 
 
 btnCommande.addEventListener('click', (e) =>{
+    e.preventDefault(); 
     let nom = document.getElementById('nom').value
     let prenom = document.getElementById('prenom').value
     let email = document.getElementById('email').value
@@ -142,16 +143,43 @@ btnCommande.addEventListener('click', (e) =>{
     let adresse = document.getElementById('adresse').value
     let codePostal = document.getElementById('codePostal').value
     let ville = document.getElementById('ville').value
+
+    // regex
+    const regexnom = /^[A-z\s\-]{2,}$/;
+    const regexprenom = /^[A-z\s\-]{2,}$/;
+    const regexmail = /^[A-z0-9._%+-]+@[A-z0-9.-]+\.[A-z]{2,}/;
+    const regexphone = /^[0-9]{10}$/;
+    const regexadresse = /^\w{1,}/;
+    const regexzipcode = /^[0-9]{5}$/;
+    const regexcity = /^[A-z\-]{1,}/;
+
+    if (regexnom.test(nom) == false) {
+        window.alert("Votre nom n'est pas valide, les caractères autorisés sont : les majuscules, les minuscules, les espaces et les -. Ce champ est requis")
+    } else if (regexprenom.test(prenom) == false){
+        window.alert("Votre prénom n'est pas valide, les caractères autorisés sont : les majuscules, les minuscules et les -. Ce champ est requis")
+    } else if (regexmail.test(email) == false){
+        window.alert("Votre email n'est pas valide, le format autaurisé est : mail@mail.fr. Ce champ est requis")
+    } else if (regexphone.test(telephon) == false){
+        window.alert("Votre numéro de téléphone n'est pas valide, le format est 10 chiffres. Ce champ est requis")
+    }else if (regexadresse.test(adresse) == false) {
+        window.alert("Votre addresse n'est pas valide, le format est (12 rue de paris). Ce champ est requis")
+    } else if (regexzipcode.test(codePostal) == false) {
+        alert("Votre code postal n'est pas valide, il doit contenire 5 chiffres. Ce champ est requis")
+    } else if (regexcity.test(ville) == false) {
+        alert(
+            "Votre ville n'est pas valide, les caractères autorisés sont : Les majuscules, les minuscules et les -. Ce champ est requis")
+    } else {
+        localStorage.removeItem("contact")
+        let contact = [nom, prenom, email, telephon, adresse, codePostal, ville]
+        let JSONcontact = JSON.stringify(contact)
+        localStorage.setItem("contact", JSONcontact)
     
-    localStorage.removeItem("contact")
-    let contact = [nom, prenom, email, telephon, adresse, codePostal, ville]
-    let JSONcontact = JSON.stringify(contact)
-    localStorage.setItem("contact", JSONcontact)
-
-    const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    const lstotalPrice = priceArray.reduce(reducer)
-
-    localStorage.removeItem("totalPrice")
-    localStorage.setItem("totalPrice", lstotalPrice)
-    console.log(localStorage.getItem("totalPrice"))
+        const reducer = (accumulator, currentValue) => accumulator + currentValue;
+        const lstotalPrice = priceArray.reduce(reducer)
+    
+        localStorage.removeItem("totalPrice")
+        localStorage.setItem("totalPrice", lstotalPrice)
+        console.log(localStorage.getItem("totalPrice"))
+        window.location.href = "./order.html"
+    }
 })
